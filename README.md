@@ -10,7 +10,7 @@ for keeping track of your github notifications from the comfort of your desktop.
 1. install pip
 1. `pip install -r requirements.txt`
 1. Create a file called `.api_token` with your username and a github API token
-   you created using their interface, in the form of <name>:<token>
+   you created using their interface, in the form of `<name>:<token>`
 1. run `python notifier.py` and watch the nofifications roll in!
 
 
