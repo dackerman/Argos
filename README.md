@@ -1,18 +1,21 @@
 # Argos
-## Github notifier using `terminal-notifier`
+## Github notifications for OS X
 
 Argos is an all-seeing 100-eyed Giant in Greek mythology, and also a python tool
 for keeping track of your github notifications from the comfort of your desktop.
 
+You run the program in the background, and Argos polls the github notifications
+API periodically, and uses `terminal-notififier` to post any new notifications 
+to the notification area. Clicking on the notification takes you to the link 
+referenced by the notification.
+
 ### Usage
 
-1. install python 3
-1. install pip
-1. `pip install -r requirements.txt`
+1. `brew install python3`
+1. `pip3 install -r requirements.txt`
 1. Create a file called `.api_token` with your username and a github API token
    you created using their interface, in the form of `<name>:<token>`
 1. run `python notifier.py` and watch the nofifications roll in!
-
 
 ### Hacking
 
