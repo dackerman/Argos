@@ -15,6 +15,7 @@ except FileNotFoundError as e:
     sys.exit()
 
 wait = 70
+max_notifications = 20
 
 def last_checked():
     try:
@@ -38,7 +39,10 @@ def notify(notification):
         
     url = repo['html_url']
     message = reason + ' ' + title
-    Notifier.notify(message, title=not_type, open=url)
+    title = not_type
+
+    print("{}: {} ({})\n".format(title, message, url))
+    Notifier.notify(message, title=title, open=url)
 
 
 def getNotifications(last_checked):
@@ -50,8 +54,11 @@ def getNotifications(last_checked):
     notifications = r.json()
     print("found {} notifications".format(len(notifications)))
 
-    for notification in notifications:
-        notify(notification)
+    if len(notifications) > max_notifications:
+        print("found more than {} notifications. Check Github for details".format(max_notifications))
+    else:
+        for notification in notifications:
+            notify(notification)
 
 while True:
     getNotifications(last_checked())
