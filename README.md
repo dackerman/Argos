@@ -9,6 +9,9 @@ API periodically, and uses `terminal-notififier` to post any new notifications
 to the notification area. Clicking on the notification takes you to the link 
 referenced by the notification.
 
+### Screenshot
+![Example of an issue on a subscribed repo](screenshot.png)
+
 ### Usage
 
 1. `brew install python3`
